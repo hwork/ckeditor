@@ -9,6 +9,7 @@ app.configure_with(:imagemagick)
 # Define the ckeditor_file_accessor macro.
 app.define_macro(ActiveRecord::Base, :ckeditor_file_accessor) if defined?(ActiveRecord::Base)
 app.define_macro_on_include(Mongoid::Document, :ckeditor_file_accessor) if defined?(Mongoid::Document)
+app.define_macro_on_include(MongoMapper::Document, :ckeditor_file_accessor) if defined?(MongoMapper::Document)
 
 app.configure do |c|
   # Store files in public/uploads/ckeditor. This is not
